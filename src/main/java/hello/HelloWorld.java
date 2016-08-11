@@ -8,6 +8,8 @@ public class HelloWorld {
     System.out.println("\nThe current local time is: " + currentTime);
 
     Greeter greeter = new Greeter();
+
+    // Print message
     System.out.println(greeter.sayHello());
   }
 }
