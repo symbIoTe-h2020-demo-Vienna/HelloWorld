@@ -9,6 +9,8 @@ public class HelloWorld {
 
     // Create the Greeter
     Greeter greeter = new Greeter();
+
+    // Print message
     System.out.println(greeter.sayHello());
   }
 }
