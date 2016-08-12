@@ -15,7 +15,7 @@ public class HelloWorld {
     // Create the Greeter
     Greeter greeter = new Greeter();
 
-    // Print message
+    // Print hello message
     System.out.println(greeter.sayHello());
   }
 }
