@@ -16,4 +16,6 @@ cache:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
 
-after_success: ./merge_script.sh
+after_success: 
+  - "chmod a+x merge_script.sh"
+  - "BRANCHES_TO_MERGE_REGEX='staging' BRANCH_TO_MERGE_INTO=develop GITHUB_REPO=symbiote-h2020/HelloWorld merge_script.sh"
