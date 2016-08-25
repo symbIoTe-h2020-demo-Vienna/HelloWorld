@@ -48,7 +48,7 @@ sleep 30
 
 # Redirect to /dev/null to avoid secret leakage
 printf 'git push "$push_uri" "$BRANCH_TO_MERGE_INTO" >/dev/null 2>&1'
-git push "$push_uri" "$BRANCH_TO_MERGE_INTO" 
+git push "$push_uri" "$BRANCH_TO_MERGE_INTO" >/dev/null 2>&1
 
 printf 'git push "$push_uri" :"$TRAVIS_BRANCH" >/dev/null 2>&1'
-git push "$push_uri" :"$TRAVIS_BRANCH" 
+git push "$push_uri" :"$TRAVIS_BRANCH" >/dev/null 2>&1
