@@ -3,6 +3,11 @@ language: java
 jdk:
   - openjdk7
 
+# safelist
+branches:
+  only:
+  - staging
+
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
