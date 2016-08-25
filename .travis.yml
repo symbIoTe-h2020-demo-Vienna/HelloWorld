@@ -1,23 +1,27 @@
 language: java
 
 env:
-  - GITHUB_SECRET_TOKEN="nothing"
-jdk:
-  - openjdk7
+  global:
+    secure: DEB9bBDEji5Otlg/az2RmIPOuFbFFezMLqT9daWUM1QOb6SL7OWQeWoiaKZGgCZwY5HJNQ29yxCHYnTCfAU4pdrn/PZQkLE0l+VM3umlh2tBMO7TB3g4F8IeYa/9nArG38H7Q7g+3jtvMV9oEvlyD2Jre3TPX/OXJK+Uqqg+NjSFfk4cdc+n4cHmobxsbdRMe9neBpf3sjs8ey1AWKi628x9IUpDrK0I/42Gtcq/BOOIXfT6c7zR9nW1chUNj0zIee7XwFvceoPPlIjHHiQ+MAa1nwv4/OPXF/18A3jMfRC0tn2PWNk+4Jx+So6boDq0v/ZoY5NmZO/9oQwQMcWO3GYV4MqXAgSyd6xE9LTqs0mdKe86lm2nvV2Rif2wnPwZ+1uxeIxDKbGuYAHNfBUT7wkVYEzOMZ4oATYVzpVRDb/4DEICR61FIAqOks8IRN/q68CEZ5ryBOJphF7vCLH8JGaoOAhAFe12MhwLyVm6mYA+Pwfk2wdf53svfbZlo/WOlwAG9bsMHt1Fccb5Zaq20dRUVdo74WsrVbKvVVqcT92WFyVB53/SSA2jk5bZz7tdfVezqAgmoyI92VYoNYALDXoM9JrwqG0Zh0jZhuRNW2Xu0C4gagkMfJiEJ2+wea9/Ld2DHfcDOJYYH7sZTzk50Xrx2ONFI3gqpmrFTOiOAE8=
 
-# safelist
+jdk:
+- openjdk7
+
 branches:
   only:
   - staging
 
 before_cache:
-  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
-  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+- rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+- rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+
 cache:
   directories:
-    - $HOME/.gradle/caches/
-    - $HOME/.gradle/wrapper/
+  - "$HOME/.gradle/caches/"
+  - "$HOME/.gradle/wrapper/"
 
-after_success: 
-  - "chmod a+x merge_script.sh"
-  - "BRANCHES_TO_MERGE_REGEX='staging' BRANCH_TO_MERGE_INTO=develop GITHUB_REPO=symbiote-h2020/HelloWorld ./merge_script.sh"
+after_success:
+- chmod a+x merge_script.sh
+- BRANCHES_TO_MERGE_REGEX='staging' BRANCH_TO_MERGE_INTO=develop GITHUB_REPO=symbiote-h2020/HelloWorld
+  ./merge_script.sh
+
