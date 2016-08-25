@@ -2,9 +2,7 @@ if [ "$TRAVIS_BRANCH" != "staging" ]; then
     exit 0;
 fi
 
-export GIT_COMMITTER_EMAIL=...
-export GIT_COMMITTER_NAME=...
 
-git checkout master 
+git checkout develop 
 git merge "$TRAVIS_COMMIT" 
-git push 
+git push --repo https://travis-symbiote:Travis1@github.com/symbiote-h2020/HelloWorld.git
