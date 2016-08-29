@@ -7,6 +7,7 @@ env:
 jdk:
 - openjdk7
 - oraclejdk8
+- openjdk8
 
 branches:
   only:
