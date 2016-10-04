@@ -21,9 +21,9 @@ jar {
     version =  '0.1.0'
 }
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '2.14'
-}
+//task wrapper(type: Wrapper) {
+//    gradleVersion = '2.14'
+//}
 
 jacoco {
     toolVersion = "0.7.7.201606060606"
